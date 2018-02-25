@@ -1,0 +1,58 @@
+server:
+  port: 9090
+spring:
+  freemarker:
+    cache: false
+    request-context-attribute: request
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+  #JDBC
+  datasource:
+    url: jdbc:mysql://localhost:3306/su_blog
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      min-idle: 1
+      test-on-borrow: true
+      stat-view-servlet:
+        allow: true
+      max-active: 20
+      initial-size: 1
+  #thymeleaf start
+  thymeleaf:
+    cache: false
+    content-type: text/html
+    encoding: UTF-8
+    mode: HTML5
+    prefix: /templates
+    suffix: .html
+  #thymeleaf end
+debug: true
+logging:
+  level:
+    root: debug
+    tk:
+      mybatis:
+        springboot:
+          mapper: trace
+#log4j
+log4j:
+  rootCategory: ERROR, stdout, file
+    appender:
+      layout:
+        ConversionPattern: %d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n
+        file: org.apache.log4j.DailyRollingFileAppender
+          layout: org.apache.log4j.PatternLayout
+          file: logs/all.log
+          DatePattern: '.'yyyy-MM-dd
+
+
+
+
+
+

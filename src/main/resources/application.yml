@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: dev
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+mapper:
+  mappers: com.su.blog.util.MyMapper
+  not-empty: false
+  identity: MYSQL
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+jdbcTypeProperties:
+  jdbcTypeToJavaType:
+    CHAR: String
+    VARCHAR: String
+    LONGVARCHAR: String
+    NUMERIC: java.math.BigDecimal
+    DECIMAL: java.math.BigDecimal
+    BIT: boolean
+    BOOLEAN: boolean
+    TINYINT: byte
+    SMALLINT: short
+    INTEGER: int
+    BIGINT: Long
+    REAL: float
+    FLOAT: double
+    DOUBLE: double
+    BINARY: byte[]
+    VARBINARY: byte[]
+    LONGVARBINARY: byte[]
+    DATE: java.sql.Date
+    TIME: java.sql.Time
+    TIMESTAMP: java.sql.Timestamp
+    BLOB: byte[]
+    INT: Integer
+
+
+
+
+
+
+
